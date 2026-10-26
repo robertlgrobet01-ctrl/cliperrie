@@ -1,0 +1,96 @@
+:root{
+  --encre:#0E1A3A;
+  --clap:#FFCB2F;
+  --papier:#F4F5F7;
+  --blanc:#FFFFFF;
+  --gris:#4F586B;
+  --ligne:#D5DAE3;
+  --titre:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+  --texte:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--texte);font-size:18px;line-height:1.55;color:var(--encre);background:var(--papier);padding-bottom:88px}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--encre);outline-offset:3px}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--titre);line-height:1.08;letter-spacing:-.02em;font-weight:800}
+h1{font-size:clamp(2.2rem,9vw,3.6rem)}
+h2{font-size:clamp(1.7rem,6.5vw,2.4rem);margin-bottom:16px}
+h3{font-size:1.2rem;margin-bottom:6px}
+p+p{margin-top:12px}
+section{padding:48px 0}
+.lead{font-size:1.15rem;color:var(--gris);margin-top:16px}
+
+/* bouton */
+.btn{display:flex;align-items:center;justify-content:center;min-height:56px;padding:14px 22px;background:var(--clap);color:var(--encre);font-family:var(--titre);font-weight:800;font-size:1.1rem;text-decoration:none;border-radius:14px;border:2px solid var(--encre);box-shadow:0 4px 0 var(--encre);text-align:center}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--encre)}
+.fine{font-size:.92rem;color:var(--gris);margin-top:12px;text-align:center}
+
+/* en-tête */
+.top{padding:18px 0}
+.logo{font-family:var(--titre);font-weight:800;font-size:1.3rem;text-decoration:none}
+
+/* visuel : le live découpé en verticales */
+.live{margin-top:32px}
+.barre{background:var(--encre);color:var(--blanc);border-radius:10px;padding:12px 14px;font-weight:700;font-size:.95rem;display:flex;justify-content:space-between}
+.coupes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.cadre{aspect-ratio:9/16;border-radius:10px;border:2px solid var(--encre);background:var(--blanc);position:relative;overflow:hidden}
+.cadre:nth-child(1){background:var(--clap)}
+.cadre::after{content:"";position:absolute;left:10%;right:10%;bottom:14%;height:16%;background:var(--encre);border-radius:4px}
+.cadre:nth-child(odd){transform:translateY(8px)}
+.legende{font-size:.9rem;color:var(--gris);margin-top:22px;text-align:center}
+
+/* douleur */
+.nuit{background:var(--encre);color:var(--blanc)}
+.nuit .lead{color:#C9D0E2}
+.chiffre{font-family:var(--titre);font-weight:800;font-size:clamp(3rem,16vw,5rem);line-height:1;color:var(--clap)}
+
+/* bénéfices */
+.liste{display:grid;gap:14px;margin-top:20px}
+.item{background:var(--blanc);border:1px solid var(--ligne);border-radius:12px;padding:18px}
+.item p{color:var(--gris)}
+
+/* offre */
+.offre{background:var(--blanc);border:2px solid var(--encre);border-radius:18px;padding:24px;margin-top:8px}
+.prix{font-family:var(--titre);font-weight:800;font-size:3rem;line-height:1}
+.prix small{font-size:1.1rem;font-weight:700}
+.jour{color:var(--gris);margin-top:4px}
+.coches{list-style:none;padding:0;margin:18px 0;display:grid;gap:8px}
+.coches li{padding-left:26px;position:relative}
+.coches li::before{content:"";position:absolute;left:2px;top:.45em;width:12px;height:7px;border-left:3px solid var(--encre);border-bottom:3px solid var(--encre);transform:rotate(-45deg)}
+.garantie{background:var(--clap);border-radius:12px;padding:14px 16px;font-weight:600;margin:18px 0}
+
+/* faq */
+details{border-top:1px solid var(--ligne);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--ligne)}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;color:var(--gris)}
+
+/* barre collante mobile */
+.collant{position:fixed;left:0;right:0;bottom:0;background:var(--blanc);border-top:2px solid var(--encre);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:12px;align-items:center;z-index:5}
+.collant strong{font-family:var(--titre);font-size:1.1rem;white-space:nowrap}
+.collant .btn{flex:1;min-height:50px;font-size:1rem}
+
+/* pied de page */
+footer{padding:32px 0 24px;font-size:.92rem;color:var(--gris)}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:12px}
+
+/* pages légales */
+.legal{padding:24px 0 56px}
+.legal h1{font-size:2rem;margin-bottom:20px}
+.legal h2{font-size:1.2rem;margin:28px 0 8px}
+.legal p,.legal li{font-size:1rem}
+.legal ul{padding-left:20px}
+.a-completer{background:#FFF3B8;padding:0 4px;border-radius:3px}
+
+@media (min-width:760px){
+  body{padding-bottom:0}
+  .collant{display:none}
+  .coupes{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
